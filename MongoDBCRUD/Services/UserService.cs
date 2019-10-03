@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace MongoDBCRUD.Services
 {
     public class UserService
-    {
+    {`
         private readonly IMongoCollection<User> users;
 
         public UserService(IConfiguration config)
@@ -18,12 +18,12 @@ namespace MongoDBCRUD.Services
 
         public List<User> Get()
         {
-            return users.Find(car => true).ToList();
+            return users.Find(user => true).ToList();
         }
 
         public User Get(string id)
         {
-            return users.Find(car => car.Id == id).FirstOrDefault();
+            return users.Find(user => user.Id == id).FirstOrDefault();
         }
     }
 }

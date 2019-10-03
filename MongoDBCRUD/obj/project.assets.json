@@ -12783,11 +12783,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dipendra.shekhawat\\source\\repos\\MongoDBCRUD\\MongoDBCRUD\\MongoDBCRUD.csproj",
+      "projectUniqueName": "D:\\Personal\\Lappy-Acer\\Training\\projects\\AspNetCoreWebAppMongoDB\\MongoDBCRUD\\MongoDBCRUD.csproj",
       "projectName": "MongoDBCRUD",
-      "projectPath": "C:\\Users\\dipendra.shekhawat\\source\\repos\\MongoDBCRUD\\MongoDBCRUD\\MongoDBCRUD.csproj",
+      "projectPath": "D:\\Personal\\Lappy-Acer\\Training\\projects\\AspNetCoreWebAppMongoDB\\MongoDBCRUD\\MongoDBCRUD.csproj",
       "packagesPath": "C:\\Users\\dipendra.shekhawat\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dipendra.shekhawat\\source\\repos\\MongoDBCRUD\\MongoDBCRUD\\obj\\",
+      "outputPath": "D:\\Personal\\Lappy-Acer\\Training\\projects\\AspNetCoreWebAppMongoDB\\MongoDBCRUD\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

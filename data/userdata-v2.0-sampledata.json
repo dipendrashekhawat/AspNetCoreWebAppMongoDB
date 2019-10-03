@@ -1,0 +1,105 @@
+[{
+		"userId": 1,
+		"age": 23,
+		"email": "joe.bloggs@gmail.com",
+		"phoneNumber": "456-782-1023",
+		"kids": null,
+		"home": {
+			"homeType": "rent",
+			"address": "2 street, NY",
+			"state": "NY",
+			"zipcode": "10001"
+		}
+	},
+	{
+		"userId": 2,
+		"age": 40,
+		"email": "peter.doobes@gmail.com",
+		"phoneNumber": "789-782-4578",
+		"home": {
+			"homeType": "own",
+			"address": "450 street, Edison",
+			"state": "NJ",
+			"zipcode": "07547"
+		},
+		"kids": [{
+				"firstName": "Jack",
+				"lastName": "doobes",
+				"age": 7
+			},
+			{
+				"firstName": "Jill",
+				"lastName": "doobes",
+				"age": 3
+			}
+		]
+	},
+	{
+		"userId": 3,
+		"age": 23,
+		"email": "john.cittizen@gmail.com",
+		"phoneNumber": "354-654-1023",
+		"home": {
+			"homeType": "other",
+			"state": "WA",
+			"zipcode": "45678"
+		}
+	},
+	{
+		"userId": 70,
+		"age": 34,
+		"email": "fred.flintstone@pefin.com",
+		"phoneNumber": "456-123-4571",
+		"home": {
+			"homeType": "own",
+			"address": "450 street, Yonkers",
+			"state": "NJ",
+			"zipcode": "10478"
+		},
+		"kids": [{
+				"firstName": "Jon",
+				"lastName": "Flintstone",
+				"age": 2
+			},
+			{
+				"firstName": "John",
+				"lastName": "Flintstone",
+				"age": 4
+			}
+		]
+	},
+	{
+		"userId": 5,
+		"age": 23,
+		"email": "tony.stark@starkindustries.com",
+		"phoneNumber": "456-123-1563",
+		"kids": null,
+		"home": {
+			"homeType": "rent",
+			"state": "NY",
+			"zipcode": "10014"
+		}
+	},
+	{
+		"userId": 65,
+		"age": 19,
+		"email": "johndoe@pefin.com"
+	},
+	{
+		"userId": 7,
+		"age": 25,
+		"email": "mason@pefin.com",
+		"phoneNumber": "456-782-1024",
+		"home": {
+			"homeType": "own",
+			"address": "7845 street, Reno",
+			"state": "NV",
+			"zipcode": "89523"
+		},
+		"kids": [{
+			"firstName": "Mary",
+			"lastName": "M",
+			"age": 1
+		}]
+	}
+]
