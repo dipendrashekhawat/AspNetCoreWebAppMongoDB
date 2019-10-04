@@ -1,25 +1,28 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson;
+
 namespace MongoDBCRUD.Models
 {
+    [BsonIgnoreExtraElements]
     public class User
     {
         [BsonId]
-        [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
+        [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
 
         [BsonElement("Age")]
         public int Age { get; set; }
 
         [BsonElement("Email")]
-        public int Email { get; set; }
+        public string Email { get; set; }
 
         [BsonElement("PhoneNumber")]
-        public int PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
 
         [BsonElement("Kids")]
-        public int Kids { get; set; }
+        public string Kids { get; set; }
 
         [BsonElement("Home")]
-        public int Home { get; set; }
+        public string Home { get; set; }
     }
 }

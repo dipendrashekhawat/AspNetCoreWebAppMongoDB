@@ -27,7 +27,7 @@ namespace MongoDBCRUD
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddScoped<UserService>();
+            services.AddScoped<UserService>(); // using DI to invoke user service
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -53,7 +53,7 @@ namespace MongoDBCRUD
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Users}/{action=Index}/{id?}");
             });
         }
     }

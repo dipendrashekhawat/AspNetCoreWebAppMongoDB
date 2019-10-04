@@ -6,12 +6,12 @@ using System.Collections.Generic;
 namespace MongoDBCRUD.Services
 {
     public class UserService
-    {`
+    {
         private readonly IMongoCollection<User> users;
 
         public UserService(IConfiguration config)
         {
-            MongoClient client = new MongoClient(config.GetConnectionString("UserDetailsDB"));
+            MongoClient client = new MongoClient(config.GetConnectionString("UsersDb"));
             IMongoDatabase database = client.GetDatabase("Users");
             users = database.GetCollection<User>("users");
         }
