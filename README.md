@@ -1,11 +1,9 @@
 # UserDetails - ASP.NET Core App with MongoDB
 
 A basic CRUD and search web application using ASP.NET Core MVC and MongoDB.
+Written in C#, ASP.NET Core MVC and MongoDB, the application has features to add, update, delete and filter/search User Details. 
 
-- Written in C#, ASP.NET Core MVC and MongoDB, the application has features to add, update, delete and filter/search User Details. 
-
-
-## Table of Content.
+## Table of Content
 
  - [Requirements](#requirements)
  - [Tech Stack](#tech-stack)
