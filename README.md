@@ -29,7 +29,7 @@ Bonus points: Support for additional parameters
  
 ## Preview Demo
 
-![UserDetails](../master/data/preview.png)
+![UserDetails](../master/data/preview.PNG)
  
 ## Trello Board
 
