@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MongoDBCRUD.Services;
+using MongoDBCRUD.Models;
 
 namespace MongoDBCRUD.Controllers
 {
@@ -38,13 +39,16 @@ namespace MongoDBCRUD.Controllers
         // POST: Users/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(User user)
         {
             try
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    userService.Create(user);
+                    return RedirectToAction(nameof(Index));
+                }
+                return View(user);
             }
             catch
             {
