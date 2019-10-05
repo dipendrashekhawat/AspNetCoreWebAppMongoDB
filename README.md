@@ -29,7 +29,7 @@ Bonus points: Support for additional parameters
  
 ## Preview Demo
 
-updating soon
+![UserDetails](../master/data/preview.png)
  
 ## Trello Board
 
@@ -40,7 +40,3 @@ Agile approach was used to develop the project.
 ## License
 
 User Details is released under the MIT license. See LICENSE for details.
-
-## Issues
-
-updating soon
