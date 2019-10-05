@@ -25,9 +25,19 @@ namespace MongoDBCRUD.Controllers
         }
 
         // GET: Users/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(string id)
         {
-            return View(userService.Get(Convert.ToString(id)));
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var user = userService.Get(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            return View(user);
         }
 
         // GET: Users/Create
@@ -57,21 +67,43 @@ namespace MongoDBCRUD.Controllers
         }
 
         // GET: Users/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(string id)
         {
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var user = userService.Get(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            return View(user);
         }
 
         // POST: Users/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(string id, User user)
         {
             try
             {
-                // TODO: Add update logic here
+                if (id != user.Id)
+                {
+                    return NotFound();
+                }
 
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    userService.Update(id, user);
+                    return RedirectToAction(nameof(Index));
+                }
+                else
+                {
+                    return View(user);
+                }
+
             }
             catch
             {
@@ -80,19 +112,36 @@ namespace MongoDBCRUD.Controllers
         }
 
         // GET: Users/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(string id)
         {
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var user = userService.Get(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            return View(user);
         }
 
         // POST: Users/Delete/5
-        [HttpPost]
+        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult DeleteConfirmed(string id)
         {
             try
             {
-                // TODO: Add delete logic here
+                var user = userService.Get(id);
+
+                if (user == null)
+                {
+                    return NotFound();
+                }
+
+                userService.Delete(user.Id);
 
                 return RedirectToAction(nameof(Index));
             }

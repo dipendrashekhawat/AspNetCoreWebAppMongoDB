@@ -49,10 +49,10 @@ namespace MongoDBCRUD.Services
         /// </summary>
         /// <param name="id"></param>
         /// <param name="existingUser"></param>
-        //public void Update(string id, User existingUser)
-        //{
-        //    users.ReplaceOne(user => user.Id == id, existingUser);
-        //}
+        public void Update(string id, User existingUser)
+        {
+            users.ReplaceOne(user => user.Id == id, existingUser);
+        }
 
         /// <summary>
         /// Removing user details
@@ -64,9 +64,9 @@ namespace MongoDBCRUD.Services
 
         }
 
-        //public void Delete(string id)
-        //{
-        //    users.DeleteOne(user => user.Id == id);
-        //}
+        public void Delete(string id)
+        {
+            users.DeleteOne(user => user.Id == id);
+        }
     }
 }

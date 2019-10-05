@@ -2426,10 +2426,23 @@ fieldset:disabled a.btn {
   border-color: #007bff;
 }
 
+/* style for delete button */
+.btn-delete {
+    color: #fff;
+    background-color: #dc3545;
+}
+
+/* style for create button */
+.btn-create {
+    color: #fff;
+    background-color: #28a745;
+}
+
+
 .btn-primary:hover {
-  color: #fff;
-  background-color: #0069d9;
-  border-color: #0062cc;
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
 }
 
 .btn-primary:focus, .btn-primary.focus {
