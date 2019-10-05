@@ -1,9 +1,7 @@
-Thumbs.db
-desktop.ini
-.DS_Store
+.vs
+*.suo
+MongoDBCRUD/bin
+MongoDBCRUD/obj
+MongoDBCRUD.Test/bin
+MongoDBCRUD.Test/obj
 
-MongoDBCRUD/*.suo
-MongoDBCRUD/*.user
-MongoDBCRUD/**/bin
-MongoDBCRUD/**/obj
-*.vs
