@@ -8,6 +8,14 @@
 
 <p>
     <a asp-action="Create">Add New User</a>
+
+    <form asp-controller="Users" asp-action="Index" method="get">
+<p>
+    Age Range: 20<input type="range" name="SearchString" min="20" max="80" step="1">60
+    <input type="submit" value="Filter" class="btn-create" />
+</p>
+</form>
+
 </p>
 <table class="table">
     <thead>
@@ -30,6 +38,12 @@
             <th></th>
         </tr>
     </thead>
+    @if (Model.Count() == 0)
+    {
+        <tr>
+            <td colspan="5">No rows match the search criteria. You may navigate <a asp-action="Index">Back to List</a></td>
+        </tr>
+    }
     <tbody>
         @foreach (var item in Model)
         {

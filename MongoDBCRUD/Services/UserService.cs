@@ -2,7 +2,9 @@
 using MongoDB.Driver;
 using MongoDBCRUD.Models;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MongoDBCRUD.Services
 {
@@ -67,6 +69,16 @@ namespace MongoDBCRUD.Services
         public void Delete(string id)
         {
             users.DeleteOne(user => user.Id == id);
+        }
+
+        public List<User> Search(string searchQuery)
+        {
+            // LINQ to get list of user being searched.
+            IQueryable<User> user = from u in users.AsQueryable()
+                                           where u.Age >= Convert.ToInt32(searchQuery) || u.Age <= 20
+                                           select u;
+
+            return user.ToList();
         }
     }
 }

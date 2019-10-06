@@ -19,9 +19,14 @@ namespace MongoDBCRUD.Controllers
         }
 
         // GET: Users
-        public ActionResult Index()
+
+        public ActionResult Index(string searchString)
         {
-            return View(userService.Get());
+            // return "From [HttpPost]Index: filter on " + searchString;
+            if (!string.IsNullOrEmpty(searchString))
+                return View(userService.Search(searchString));
+            else
+                return View(userService.Get());
         }
 
         // GET: Users/Details/5
