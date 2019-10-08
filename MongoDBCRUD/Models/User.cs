@@ -20,17 +20,13 @@ namespace MongoDBCRUD.Models
         [BsonElement("PhoneNumber")]
         public string PhoneNumber { get; set; }
 
-        //[BsonElement("Kids")]
-        //public List<Kid> Kids { get; set; }
-
-        //[BsonElement("Home")]
-        //public List<Home> Home { get; set; }
         [BsonElement("Kids")]
-        public string Kids { get; set; }
-        [BsonElement("Home")]
-        public string Home { get; set; }
-    }
+        public List<Kid> Kids { get; set; }
 
+        [BsonElement("Home")]
+        public List<Home> Home { get; set; }
+
+    }
 
     public class Home
     {

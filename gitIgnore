@@ -1,7 +1,6 @@
-.vs
+.vs/
 *.suo
-MongoDBCRUD/bin/*
-MongoDBCRUD/obj/*
-MongoDBCRUD.Test/bin/*
-MongoDBCRUD.Test/obj/*
+MongoDBCRUD/bin/
+MongoDBCRUD/obj/
+MongoDBCRUD.Test/
 

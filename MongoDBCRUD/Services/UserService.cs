@@ -16,7 +16,7 @@ namespace MongoDBCRUD.Services
         {
             MongoClient client = new MongoClient(config.GetConnectionString("UsersDb"));
             IMongoDatabase database = client.GetDatabase("Users");
-            users = database.GetCollection<User>("users");
+            users = database.GetCollection<User>("userDetails");
         }
 
 
@@ -75,8 +75,10 @@ namespace MongoDBCRUD.Services
         {
             // LINQ to get list of user being searched.
             IQueryable<User> user = from u in users.AsQueryable()
-                                           where u.Age >= Convert.ToInt32(searchQuery) || u.Age <= 20
+                                           where u.Age >= Convert.ToInt32(searchQuery) && u.Age <= 30
                                            select u;
+
+            //var userDetails = users.AsQueryable().Where(u => u.Age >= Convert.ToInt32(searchQuery) && u.Age <= 30).ToList();
 
             return user.ToList();
         }
