@@ -36,3 +36,15 @@ Bonus points: Support for additional parameters
 The following project has been excuted with the help of tracking task in [Trello Board](https://trello.com/b/hsFGT0Aa/).
 Agile approach was used to develop the project.
 
+## Importing/Exporting Data in MongoDB
+
+Pre-requisite: MongoDB should be installed on the machine where you will be running this app.
+
+Prior running the application, please follow the below step to set up the data store:
+
+- Create a database named 'Users'
+- Create a collection named 'userDetails' in the newly created database.
+- Navigate to data folder and select users.json file.
+- Import the users.json in MongoDB collection.
+
+
