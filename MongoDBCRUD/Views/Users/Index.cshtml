@@ -11,7 +11,10 @@
 
     <form asp-controller="Users" asp-action="Index" method="get">
 <p>
-    Age Range: 20<input type="range" name="SearchString" min="20" max="80" step="1">60
+    <b>Age Range:</b> 0<input type="range" name="ageFilter" min="0" max="60" step="1"
+                              oninput="document.getElementById('ageFilter').innerHTML = this.value">60
+    <label id="ageFilter"></label>
+    <b>Home State:</b> <input type="text" name="stateFilter" placeholder="NJ,NY,WA,NV" size="15" />
     <input type="submit" value="Filter" class="btn-create" />
 </p>
 </form>
@@ -58,10 +61,33 @@
                     @Html.DisplayFor(modelItem => item.PhoneNumber)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Kids)
+                    @Html.DisplayFor(modelItem => item.Kids.Count) &nbsp;
+
+                    @if (item.Kids.Count != 0)
+                    {
+                        @foreach (var kid in item.Kids)
+                        {
+                            @Html.DisplayFor(modelItem => kid.firstName)
+                            @Html.DisplayFor(modelItem => kid.lastName)
+                            @Html.DisplayFor(modelItem => kid.age)
+                        }
+                    }
+                    else
+                    {
+                        @Html.DisplayFor(modelItem => 0)
+                    }
+
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Home)
+                    @*@Html.DisplayFor(modelItem => item.Home)*@
+
+                    @foreach (var homedetails in item.Home)
+                    {
+                        @Html.DisplayFor(modelItem => homedetails.homeType)
+                        @Html.DisplayFor(modelItem => homedetails.address)
+                        @Html.DisplayFor(modelItem => homedetails.state)
+                        @Html.DisplayFor(modelItem => homedetails.zipcode)
+                    }
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |

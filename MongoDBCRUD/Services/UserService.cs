@@ -71,14 +71,19 @@ namespace MongoDBCRUD.Services
             users.DeleteOne(user => user.Id == id);
         }
 
-        public List<User> Search(string searchQuery)
+        public List<User> Search(int ageFilter, string stateFilter)
         {
             // LINQ to get list of user being searched.
             IQueryable<User> user = from u in users.AsQueryable()
-                                           where u.Age >= Convert.ToInt32(searchQuery) && u.Age <= 30
-                                           select u;
+                                    where u.Age > 0 && u.Age <= ageFilter
+                                    select u;
 
             //var userDetails = users.AsQueryable().Where(u => u.Age >= Convert.ToInt32(searchQuery) && u.Age <= 30).ToList();
+
+            if (!string.IsNullOrEmpty(stateFilter))
+            {
+                users.AsQueryable().Where(u => u.Home[0].state.Contains(stateFilter)).ToList();
+            }
 
             return user.ToList();
         }

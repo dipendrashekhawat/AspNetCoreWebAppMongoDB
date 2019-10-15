@@ -20,11 +20,10 @@ namespace MongoDBCRUD.Controllers
 
         // GET: Users
 
-        public ActionResult Index(string searchString)
+        public ActionResult Index(int ageFilter, string stateFilter)
         {
-            // return "From [HttpPost]Index: filter on " + searchString;
-            if (!string.IsNullOrEmpty(searchString))
-                return View(userService.Search(searchString));
+            if (ageFilter > 0)
+                return View(userService.Search(ageFilter, stateFilter));
             else
                 return View(userService.Get());
         }
